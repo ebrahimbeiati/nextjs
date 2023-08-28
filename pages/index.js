@@ -1,18 +1,12 @@
-import Link from "next/link";
-
+import { getFeaturedEvents } from "@/dummy-data"
 
 
 export default function Home() {
+  const featuredEvents = getFeaturedEvents();
   return (
     <div>
-      <h1>The Home Page</h1>
-      <ul>
-        <li><Link href="/about">About</Link></li>
-        <li><Link href="/portfolio">Portfolio</Link></li>
-        <li><Link href="/blog">Blog</Link></li>
-        <li><Link href="/about/clients">Clients</Link></li>
-      </ul>
-   
+    
+    <h1>hgchgx</h1>
     </div>
   )
 }
