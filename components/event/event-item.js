@@ -1,4 +1,6 @@
 import Link from "next/link";
+import classes from "./event-item.module.css";
+import Button from "../ui/button";
 function EventItem(props){
     const{title, image, date, location,id}= props;
     const humanReadableDate = new Date(date).toLocaleDateString('en-US',{
@@ -10,20 +12,20 @@ function EventItem(props){
     const exploreLink = `/events/${id}`;
 
     return (
-      <li>
+      <li className={classes.item}>
         <img src={"/" + image} alt={title} />
-        <div>
-          <div>
+        <div className={classes.content}>
+          <div className={classes.summary}>
             <h3>{title}</h3>
           </div>
-          <div>
+          <div className={classes.date}>
             <time>{humanReadableDate}</time>
           </div>
-          <div>
+          <div className={classes.address}>
             <address>{formattedAddress}</address>
           </div>
-          <div>
-            <Link href={exploreLink}>Explore Event</Link>
+          <div className={classes.actions}>
+          <Button link={exploreLink}>Explore Events</Button>
           </div>
         </div>
       </li>
